@@ -1,0 +1,824 @@
+
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  background-color: #16A4D6;
+}
+
+#topodapagina {
+  height: 140px;
+  margin-top: 0;
+}
+
+#imagemDoIf {
+  position: absolute;
+  top: 25px;
+  left: 20px;
+}
+
+#logoAnuario {
+  position: absolute;
+  top: 12px;
+  left: 570px;
+}
+
+#menudapagina{
+float:left;
+width:1349px;
+margin-top:-4px;
+}
+#menudapagina li{
+color: white;
+text-shadow:black 0.1em 0.1em 0.2em;
+float:left;
+font-family:arial;
+font-size:18px;
+list-style: none;
+margin: 0px -12px 0px 40px;
+padding: 15px 25px;
+width:176px;
+text-align:center;
+}
+.fa-solid, .fas{
+  color:white;
+}
+#menudapagina li:hover{
+background-color: #919191;
+color: white;
+}
+#menudapagina a.menuActive{
+  background-color:red;
+}
+.sticky{	
+position: fixed;
+top: 0;
+width: 100%;
+background-color: #014A7D;
+display:block;
+z-index:2;
+}
+#menudapagina a{
+text-decoration:none;
+}
+#menudapagina >.active>a li {
+    color: #fff;
+    background-color: #3CB371;
+}
+
+
+
+
+
+#paginaInicial1 {
+  background-color: #16A4D6;
+  height: 1000px;
+}
+
+#logoDaTurma {
+  position: absolute;
+  top: 60px;
+  left: 1099px;
+}
+
+.mySlides {
+  display: none;
+}
+
+/* Slideshow */
+.slideshow {
+  max-width: 500px;
+  max-height: 300px;
+  margin: auto;
+  float: left;
+  clear: left;
+  margin-left: 10px;
+}
+
+.imagens-slideshow {
+  width: 100%;
+}
+
+/* Margin: top, right, bottom, and left */
+.dot {
+  height: 15px;
+  width: 15px;
+  margin: -20px 0 100px 0;
+  background-color: #455a64;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active {
+  background-color: #90a4ae;
+}
+
+#caixaDeTexto {
+  background-color: #F1F1EF;
+  width: 518px;
+  height: 300px;
+  float: right;
+  clear: right;
+  margin-right: 30px;
+  border: 1px solid black;
+}
+
+.texto {
+  color: #071349;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+#textoInicial {
+  text-align: center;
+  color: #F1F1EF;
+  font-family: emoji;
+  font-size: 30px;
+  text-shadow: 2px 2px #071349;
+}
+
+#textoInicial2 {
+  text-align: center;
+  color: #ffffff;
+  font-family: 'Monotype Corsiva', cursive;
+  font-size: 18px;
+}
+
+section div:first-child {
+  background-color: #0769b2;
+  width: 220px;
+  height: 270px;
+  position: absolute;
+  margin-top: 80px;
+  margin-left: 520px;
+  border-radius: 20%;
+  border: 0.5px solid rgba(9, 18, 71, 0.2);
+  clear: both;
+}
+
+section div:last-child {
+  background-color: #0769b2;
+  width: 220px;
+  height: 270px;
+  position: absolute;
+  float: left;
+  clear: both;
+  margin-top: 50px;
+  margin-left: 500px;
+  border-radius: 20%;
+  border: 0.5px solid rgba(9, 18, 71, 0.8);
+}
+
+/* Style the buttons inside the tab */
+.tab button {
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.tab button:hover {
+  background-color: #ddd;
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
+  background-color: #ccc;
+}
+
+/* Style the tab content */
+.tabcontent {
+  display: none;
+}
+
+.linhaPrinc {
+  clear: both;
+  border-color: white;
+  border-width: 3px;
+  position: relative;
+  top: 600px;
+}
+
+#Alunos {
+  clear: both;
+  position: relative;
+  min-height: 1px;
+  text-align: center;
+}
+
+.tituloDaPaginadoAluno {
+  color: #F1F1EF;
+  font-size: 40px;
+  margin-top: -60px;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.linha2 {
+  max-width: 100px;
+  border-color: #3CB371;
+  border-width: 3px;
+  height: 10px;
+}
+
+.linha2 {
+  margin-top: -15px;
+  margin-bottom: 1px;
+  border: 0;
+  border-top: 1px solid #eee;
+}
+
+.textoDescricaoAlunos {
+  color: black;
+  margin-left: 20px;
+}
+
+.cardPerfil {
+  max-width: 180px;
+  max-height: 225px;
+  text-align: center;
+  font-family: Arial, sans-serif;
+  margin: 21px 36px 15px 13px;
+  display: block;
+  position: relative;
+  float: left;
+  clear: none;
+  cursor: pointer;
+  box-shadow: 4px 5px 10px teal;
+  height: 229px;
+  box-sizing: border-box;
+  border-radius: 7px;
+}
+
+.cardPerfil:hover {
+  background-color: #ddd;
+}
+
+.cardPerfil:hover,
+.cardPerfil:focus {
+  transform: scale(1.09, 1.09);
+}
+
+.nomeDosAlunos {
+  margin: 0;
+}
+
+.iconeDoAluno {
+  height: 130px;
+  margin: 22px 19px 10px 19px;
+  overflow: hidden;
+  width: 135px;
+  border-radius: 50%;
+  backface-visibility: hidden;
+  box-shadow: none;
+  display: block;
+  position: relative;
+  float: left;
+  clear: none;
+}
+
+.iconeDoAluno:hover,
+.iconeDoAluno:focus {
+  transform: scale(1.05, 1.05);
+}
+
+.iconeDoProfessor {
+  width: 124px;
+  height: 130px;
+  margin: 4px 19px 10px 19px;
+  overflow: hidden;
+  border-radius: 50%;
+  backface-visibility: hidden;
+  box-shadow: none;
+  display: block;
+  position: relative;
+  float: left;
+  clear: none;
+}
+
+.iconeDoProfessor:hover,
+.iconeDoProfessor:focus {
+  transform: scale(1.05, 1.05);
+}
+
+.cardPerfilProfessor {
+  max-width: 175px;
+  text-align: center;
+  font-family: Arial, sans-serif;
+  margin: -3px 10px 15px 13px;
+  display: block;
+  position: relative;
+  float: left;
+  clear: none;
+  cursor: pointer;
+}
+
+.cardPerfilProfessor:hover {
+  background-color: #ddd;
+}
+
+.cardPerfilProfessor:hover,
+.cardPerfilProfessor:focus {
+  transform: scale(1.08, 1.08);
+}
+
+.linhaPrinc2 {
+  clear: both;
+  border-color: white;
+  border-width: 3px;
+  position: relative;
+  top: 10px;
+}
+
+.tituloDaPaginadoProfs {
+  color: #F1F1EF;
+  font-size: 40px;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.linhaPrinc3 {
+  clear: both;
+  border-color: white;
+  border-width: 3px;
+  position: relative;
+  top: 10px;
+}
+
+.tituloDaPaginaGaleria {
+  color: #F1F1EF;
+  font-size: 40px;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  padding-top: 100px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0,0,0);
+  background-color: rgba(0,0,0,0.4);
+}
+
+/* Modal Content */
+.modal-content {
+  background-color: #F3F3F3;
+  margin: auto;
+  padding: 20px;
+  border: 8px solid #0769b2;
+  width: 44%;
+  height: 320px;
+}
+
+/* The Close Button */
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* Position the image container (needed to position the left and right arrows) */
+.containerGaleria {
+  position: relative;
+}
+
+/* Hide the images by default */
+.myGalerySlides {
+  display: none;
+}
+
+/* Add a pointer when hovering over the thumbnail images */
+.cursor {
+  cursor: pointer;
+}
+
+/* Next & previous buttons */
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 40%;
+  width: auto;
+  padding: 16px;
+  margin-top: -50px;
+  margin-left: -675px;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Six columns side by side */
+.column {
+  float: left;
+  width: 16.66%;
+}
+
+/* Add a transparency effect for thumbnail images */
+.demo {
+  opacity: 0.6;
+}
+
+.active,
+.demo:hover {
+  opacity: 1;
+}
+
+.linha3 {
+  max-width: 116px;
+  border-color: #3CB371;
+  border-width: 3px;
+  height: 10px;
+}
+
+.linha3 {
+  margin-top: -15px;
+  margin-bottom: 50px;
+  border: 0;
+  border-top: 1px solid #eee;
+}
+
+#ano1{
+  color: #071349;
+  position: absolute;
+  margin: 6px 0px 0px 574px;
+  text-align: center;
+  z-index: 1;
+  text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
+  font-family: cursive;
+  font-size: 25px;
+
+}
+#ano2 {
+  color: #071349;
+  position: absolute;
+  margin: 4px 0px 0px -82px;
+  text-align: center;
+  z-index: 1;
+  text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
+  font-family: cursive;
+  font-size: 25px;
+}
+
+.bolaDoAno {
+  content: '';
+  position: absolute;
+  width: 70px;
+  height: 70px;
+  right: -25px;
+  background-color: white;
+  border: 4px solid #0769b2;
+  top: -1px;
+  border-radius: 50%;
+  z-index: 1;
+  transition: transform 0.2s;
+}
+
+.bolaDoAno:hover {
+  transform: scale(1.3);
+  background-color: #071349;
+}
+
+/* The actual timeline (the vertical ruler) */
+.linhaDoTempo {
+  position: relative;
+  max-width: 1351px;
+  margin: 0 auto;
+  background-color: #16a4d6;
+}
+
+.linhaDoTempo::after {
+  content: '';
+  position: absolute;
+  width: 6px;
+  background-color: #0769b2;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  margin-left: -3px;
+}
+
+/* Container around content */
+.container {
+  padding: 10px 40px;
+  position: relative;
+  background-color: inherit;
+  width: 50%;
+}
+
+/* Place the container to the left */
+.left {
+  left: 0;
+}
+
+/* Place the container to the right */
+.right {
+  left: 50%;
+}
+
+/* Add arrows to the left container (pointing right) */
+.left::before {
+  content: " ";
+  height: 0;
+  position: absolute;
+  top: 20px;
+  width: 0;
+  z-index: 1;
+  right: 52px;
+  border: medium solid white;
+  border-width: 10px 0 10px 10px;
+  border-color: transparent transparent transparent #0769b2;
+}
+
+/* Add arrows to the right container (pointing left) */
+.right::before {
+  content: " ";
+  height: 0;
+  position: absolute;
+  top: 22px;
+  width: 0;
+  z-index: 1;
+  left: 30px;
+  border: medium solid white;
+  border-width: 10px 10px 10px 0;
+  border-color: transparent white transparent transparent;
+}
+
+/* Fix the circle for containers on the right side */
+.right::after {
+  left: -16px;
+}
+
+/* The actual content */
+.content {
+  padding: 20px 30px;
+  background-color: #0769b2;
+  position: relative;
+  border-radius: 15px;
+}
+
+.content p {
+  color: white;
+}
+
+/* Media queries - Responsive timeline on screens less than 600px wide */
+@media screen and (max-width: 600px) {
+  .linhaDoTempo::after {
+    left: 31px;
+  }
+
+  .container {
+    width: 100%;
+    padding-left: 70px;
+    padding-right: 25px;
+  }
+
+  .container::before {
+    left: 60px;
+    border: medium solid white;
+    border-width: 10px 10px 10px 0;
+    border-color: transparent white transparent transparent;
+  }
+
+  .left::after, .right::after {
+    left: 15px;
+  }
+
+  .right {
+    left: 0%;
+  }
+}
+
+.abriElemento {
+  background-color: #0769b2;
+  color: white;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+  transition: 0.4s;
+  border-radius: 23%;
+}
+
+.active, .abriElemento:hover {
+  background-color: #ccc;
+  color: blue;
+}
+
+.panel {
+  padding: 0 18px;
+  display: none;
+  background-color: white;
+  overflow: hidden;
+}
+
+/* Configuração para celular */
+@media (max-width: 760px) {
+  #imagemDoIf {
+    width: 57px;
+    top: 35px;
+    left: 20px;
+  }
+
+  #logoAnuario {
+    width: 200px;
+    top: 4px;
+    left: 100px;
+  }
+
+  #logoDaTurma {
+    width: 200px;
+    top: 88px;
+    left: 98px;
+  }
+
+  .imagens-slideshow {
+    width: 167px;
+    margin-left: -6px;
+  }
+
+  #textoInicial {
+    font-size: 20px;
+  }
+
+  #textoInicial2 {
+    font-size: 16px;
+  }
+
+  section div:last-child {
+    width: 169px;
+    height: 211px;
+    margin-top: 50px;
+    margin-left: 177px;
+  }
+
+  section div:first-child {
+    width: 184px;
+    height: 203px;
+    margin-top: 72px;
+    margin-left: 179px;
+  }
+
+  .texto > h2 {
+    font-size: 20px;
+  }
+
+  .texto > p {
+    font-size: 16px;
+  }
+
+  #caixaDeTexto {
+    width: 279px;
+    height: 320px;
+    float: left;
+    margin-top: 76px;
+    margin-left: 34px;
+  }
+
+  #menudapagina {
+    flex-direction: column;
+    padding: 0;
+  }
+
+  #menudapagina li {
+    padding: 10px;
+    width: 100%;
+    margin: 5px 0;
+  }
+}
+
+/* Configuração para tablets */
+@media (min-width: 761px) and (max-width: 1024px) {
+  #imagemDoIf {
+    width: 70px;
+    top: 20px;
+    left: 20px;
+  }
+
+  #logoAnuario {
+    width: 240px;
+    top: 10px;
+    left: 300px;
+  }
+
+  #logoDaTurma {
+    width: 240px;
+    top: 50px;
+    left: 600px;
+  }
+
+  .imagens-slideshow {
+    width: 300px;
+    margin-left: -5px;
+  }
+
+  #textoInicial {
+    font-size: 25px;
+  }
+
+  #textoInicial2 {
+    font-size: 18px;
+  }
+
+  section div:last-child {
+    width: 200px;
+    height: 250px;
+    margin-top: 50px;
+    margin-left: 300px;
+  }
+
+  section div:first-child {
+    width: 220px;
+    height: 250px;
+    margin-top: 60px;
+    margin-left: 300px;
+  }
+
+  .texto > h2 {
+    font-size: 22px;
+  }
+
+  .texto > p {
+    font-size: 18px;
+  }
+
+  #caixaDeTexto {
+    width: 300px;
+    height: 320px;
+    float: left;
+    margin-top: 70px;
+    margin-left: 30px;
+  }
+
+  #menudapagina {
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 0;
+  }
+
+  #menudapagina li {
+    padding: 10px;
+    width: auto;
+    margin: 5px;
+  }
+}
+
+footer {
+  background-color: #014A7D;
+  color: white;
+  text-align: center;
+  padding: 20px 0; /* Aumenta o espaço interno do rodapé */
+  width: 100%;
+  position:absolute;
+}
+
+footer p {
+  margin: 5px 0; /* Espaçamento entre as linhas de texto */
+  font-size: 16px; /* Aumenta o tamanho da fonte */
+  font-family: Arial, sans-serif;
+}
+
+

@@ -1,0 +1,779 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title> Anuário Digital Memórias </title><!--Codigo html-css começado no dia 28/03/2021, as 8:40 da manha-->
+<meta http-equiv=”Content-Type” content=”text/html; charset=utf-8″>
+<meta charset="UTF-8">
+<link rel="stylesheet" type="text/css" href="style.css" />
+<link rel="shortcut icon" href="logo-memorias-anuario-digital.png" width="50" >
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+  
+</style>
+</head>
+<body>
+
+<div id="topodapagina">
+<img src="https://thumbs.dreamstime.com/b/fundo-de-papel-velho-vazio-do-vintage-96632320.jpg" width="1349" height="140">
+<img id="imagemDoIf" src="logo-ufrn.png" style="width:166px; top: 65px;">
+<img id="logoAnuario"src="logo-memorias-anuario-digital.png" width="240">
+<div id="menudapagina">
+<a class="active" href="#topodapagina"><li>Inicio</li></a>
+<a class="active" href="#Alunos"><li>Alunos</li></a>
+<a class="active" href="#Professores"><li>Professores</li></a>
+<a class="active" href="#Galeria"><li>Galeria</li></a>
+<a class="active" href="#Eventos_e_Momentos"><li>Eventos</li></a>
+<a class="active" href="login.html" id="logar-link"><li>Logar</li></a>
+<a class="active"><li id="user-info" style="display:none; display: inline;text-align: center;width: 196px;font-size: 13px;"></a></li>
+<li style=" width: 60px;margin-left: 0;"><a href="#" id="logout" style="display:none; "><i class="fas fa-sign-out-alt"></i></a></li>
+
+</div>
+</div>
+<div id="paginaInicial1">
+<img id="logoDaTurma" src="logo-infounity18.png" width="250">
+
+<div class="slideshow">
+
+<div class="mySlides fade">
+  <a href="#Galeria"><img src="Fotos\Whats-App-Image-2021-03-25-at-20-49-45.jpg" width="400"></a>
+</div>
+<div class="mySlides fade">
+  <a href="#Galeria"><img src="Fotos\Whats-App-Image-2021-03-25-at-20-48-48.jpg" width="400"></a>
+</div>
+<div class="mySlides fade">
+  <a href="#Galeria"><img src="Fotos\Whats-App-Image.jpg" width="400"></a>
+</div>
+
+<div style="text-align:center">
+  <span class="dot"></span> 
+  <span class="dot"></span> 
+  <span class="dot"></span> 
+</div>
+</div>
+<section>
+  <div></div>
+  <div><p id="textoInicial">Bem-vindo(a)</p><p id="textoInicial2">Ao anuário digital memórias, um site anuário que guarda as memórias da turma de informática chamada InfoUnity18. Conheça os alunos, professores, a galeria de fotos, os eventos e os momentos desta turma.</p></div> 
+</section>
+<div id="caixaDeTexto">
+  <div class="texto">
+<h2>Informações sobre a turma</h2>
+<p><b>Nome da turma:</b> InfoUnity18 &ensp;<a href="https://www.instagram.com/infounity18/"><i class="fa fa-instagram"></i></a><a href="https://www.youtube.com/channel/UCIbPob6nPvVx8-JkvTL9Rxg"><i class="fa fa-youtube"></i></a></p> 
+<p><b>Curso:</b> 05401 - Técnico de Nível Médio em Informática, na Forma Integrado (2012) - Campus Ipanguaçu (CAMPUS IPANGUAÇU)</p>
+<p><b>Matriz:</b> 106 - Técnico Integrado em Informática (2012)</p>
+<p><b>Inicio do curso:</b> 2018/1 &ensp;&ensp;<b>Terminio do curso:</b> 2021/1 &ensp;<b>Duração:</b> 4 anos</p>
+  </div>
+</div>
+<hr class="linhaPrinc">
+</div>
+<div id="Alunos">
+  <h2 class="tituloDaPaginadoAluno">Alunos</h2>
+  <hr class="linha2">
+  <div class="button-container">
+    <button onclick="fetchAlunos('todos')">Todos os Alunos</button>
+    <button onclick="fetchAlunos('concluintes')">Concluintes</button>
+  </div>
+  <div id="admin-section" class="admin-actions" style="display: none;">
+    <form id="add-student-form">
+      <input type="text" name="studentName" placeholder="Nome do Aluno" required>
+      <input type="file" name="photo" required>
+      <button type="submit">Adicionar Aluno</button>
+    </form>
+  </div>
+  <div class="container-alunos" id="students-container">
+    <!-- Conteúdo dos alunos será inserido aqui -->
+</div>
+<hr class="linhaPrinc2">
+</div>
+<div id="Professores">
+<h2 class="tituloDaPaginadoProfs">Professores</h2>
+<hr class="linha2">
+  <div class="admin-actions" style="display: none;">
+    <button onclick="showAddProfessorForm()">Adicionar Professor</button>
+  </div>
+  <div class="container-professores" id="professores-container">
+    <!-- Conteúdo dos professores será inserido aqui -->
+  </div>
+
+<hr class="linhaPrinc3">
+</div>
+
+<div id="Galeria">
+  <h2 class="tituloDaPaginaGaleria">Galeria</h2>
+  <hr class="linha2">
+    <div class="admin-actions" style="display: none;">
+      <button onclick="showAddImageForm()">Adicionar Imagem</button>
+    </div>
+  <div class="containerGaleria">
+    <div class="myGalerySlides">
+      <!-- Conteúdo da galeria -->
+      </div>
+  
+  <!--
+      <img src="C:\Users\Weuler dos Santos/Downloads/WhatsApp Image 2021-03-25 at 20.49.45.jpeg" width="100" style="width:45%">
+    </div>
+  
+    <div class="myGalerySlides">
+      <img src="C:\Users\Weuler dos Santos/Downloads/WhatsApp Image.jpeg" width="100" style="width:40%">
+    </div>
+  
+    <div class="myGalerySlides">
+      <img src="C:\Users\Weuler dos Santos/Downloads/fotos da turma  (1).jpg" width="100" style="width:40%">
+    </div>
+      
+    <div class="myGalerySlides">
+     
+    </div>
+  
+    <div class="myGalerySlides">
+      <img src="C:\Users\Weuler dos Santos/Downloads/fotos da turma  (3).jpg" width="100" style="width:40%">
+    </div>
+      
+    <div class="myGalerySlides">
+      <img src="C:\Users\Weuler dos Santos/Downloads/fotos da turma  (4).jpg" width="400" style="width:40%">
+    </div>
+  -->
+      
+    <a class="prev" onclick="plusSlides(-1)">❮</a>
+    <a class="next" onclick="plusSlides(1)">❯</a>
+  
+    <div class="row">
+      <div class="column">
+        <img class="demo cursor" src="Fotos/fotos-da-turma-11.jpg" height="130" style="width:100%" onclick="currentSlide(1)" alt="Foto da turma infounity18">
+      </div>
+      <div class="column">
+        <img class="demo cursor" src="Fotos/fotos-da-turma-12.jpg" style="width:100%" onclick="currentSlide(2)" alt="Foto da turma infounity18 2">
+      </div>
+      <div class="column">
+        <img class="demo cursor" src="Fotos/fotos-da-turma-1.jpg" style="width:100%" onclick="currentSlide(3)" alt="Foto da turma infounity18 3">
+      </div>
+      <div class="column">
+        <img class="demo cursor" src="Fotos/fotos-da-turma-2.jpg" style="width:100%" onclick="currentSlide(4)" alt="Foto da turma infounity18 4">
+      </div>
+      <div class="column">
+        <img class="demo cursor" src="Fotos/fotos-da-turma-3.jpg" style="width:100%" onclick="currentSlide(5)" alt="Foto da turma infounity18 5">
+      </div>    
+      <div class="column">
+        <img class="demo cursor" src="Fotos/fotos-da-turma-4.jpg" style="width:100%" onclick="currentSlide(6)" alt="Foto da turma infounity18 6">
+      </div>
+  
+    </div>
+  </div>
+<hr class="linhaPrinc3">
+</div>
+
+<div id="Eventos_e_Momentos">
+<h2 class="tituloDaPaginaGaleria">Eventos e Momentos</h2>
+<hr class="linha3">
+<div class="linhaDoTempo">
+<div class="linhaDoTempo" style="margin-left:34px;">
+  <div class="container left">
+  <span class="bolaDoAno"></span>
+  <h1 id="ano1">2018</h1>
+    <div class="content" style="margin: 1px 21px 0px -60px;">
+      <p>Começo da caminhada, o primeiro ano da turma, 18 de abril de 2018. Começavamos a nossa caminhada na jornada do ensino médio... O primeiro dia de aula, o primeiro contato da turma em sala, e ali se formariam grandes amizades...</p>
+	</div>
+  </div>
+   <img src="Fotos/fotos-da-turma-10.jpg" width="100" style="width:40%;     margin: -71px 0px 57px 657px;">
+   <img src="Fotos/fotos-da-turma-7.jpg" width="100" style="width:40%;     margin: -290px 554px 0px 0px;">
+
+  <div class="container right">
+  <span class="bolaDoAno" style="margin: 0px 656px 0px 0px;"></span>
+  <h1 id="ano2">2019</h1>
+    <div class="content">
+      <h2></h2>
+      <p style="font-size: 47px;">...</p>
+    </div>
+  </div>
+  <div class="container left">
+    <div class="content">
+      <h2>2015</h2>
+      <p>Lorem ipsum dolor sit amet, quo ei simul congue exerci, ad nec admodum perfecto mnesarchum, vim ea mazim fierent detracto. Ea quis iuvaret expetendis his, te elit voluptua dignissim per, habeo iusto primis ea eam.</p>
+    </div>
+  </div>
+  <div class="container right">
+    <div class="content">
+      <h2>2012</h2>
+      <p>Lorem ipsum dolor sit amet, quo ei simul congue exerci, ad nec admodum perfecto mnesarchum, vim ea mazim fierent detracto. Ea quis iuvaret expetendis his, te elit voluptua dignissim per, habeo iusto primis ea eam.</p>
+    </div>
+  </div>
+  <div class="container left">
+    <div class="content">
+      <h2>2011</h2>
+      <p>Lorem ipsum dolor sit amet, quo ei simul congue exerci, ad nec admodum perfecto mnesarchum, vim ea mazim fierent detracto. Ea quis iuvaret expetendis his, te elit voluptua dignissim per, habeo iusto primis ea eam.</p>
+    </div>
+  </div>
+  <div class="container right">
+    <div class="content">
+      <h2>2007</h2>
+      <p>Lorem ipsum dolor sit amet, quo ei simul congue exerci, ad nec admodum perfecto mnesarchum, vim ea mazim fierent detracto. Ea quis iuvaret expetendis his, te elit voluptua dignissim per, habeo iusto primis ea eam.</p>
+    </div>
+  </div>
+</div>
+  
+  <footer>
+    <p>&copy; <span id="currentYear"></span> Todos os direitos reservados</p>
+    <p>support@example.com</p>
+    <p>InfoUnity18</p>
+  </footer>
+
+  <div id="loginMessage" style="display:none; color:green;">
+    Login successful!</div>
+</div>
+<script href="demo_db_connection.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  async function fetchUserInfo() {
+    const token = localStorage.getItem('token');
+    if (!token) return;
+
+    try {
+      const response = await fetch('http://localhost:3000/userinfo', {
+        method: 'GET',
+        headers: {
+          'Authorization': `Bearer ${token}`
+        }
+      });
+
+      if (response.ok) {
+        const userData = await response.json();
+        const userInfoElement = document.getElementById('user-info');
+        const logoutElement = document.getElementById('logout');
+        const logarLinkElement = document.getElementById('logar-link');
+        const adminSectionElements = document.querySelectorAll('#admin-section');
+
+        userInfoElement.textContent = `Olá, ${userData.username} (${userData.role})`;
+        userInfoElement.style.display = 'inline';
+        logoutElement.style.display = 'inline';
+        logarLinkElement.style.display = 'none';
+
+        if (userData.role === 'admin') {
+          adminSectionElements.forEach(section => {
+            section.style.display = 'block';
+          });
+        }
+      } else {
+        console.error('Erro ao obter informações do usuário:', response.statusText);
+      }
+    } catch (error) {
+      console.error('Erro durante a requisição de informações do usuário:', error);
+    }
+  }
+
+  document.getElementById('logout').addEventListener('click', function(event) {
+    event.preventDefault();
+    localStorage.removeItem('token');
+    window.location.href = 'login.html';
+  });
+
+  fetchUserInfo();
+
+  document.getElementById('add-student-form').addEventListener('submit', async function(event) {
+    event.preventDefault();
+
+    const token = localStorage.getItem('token');
+    if (!token) return;
+
+    const formData = new FormData(this);
+    const submitButton = this.querySelector('button[type="submit"]');
+    submitButton.disabled = true; // Desativa o botão de submissão
+
+    try {
+      const response = await fetch('http://localhost:3000/add-student', {
+        method: 'POST',
+        headers: {
+          'Authorization': `Bearer ${token}`
+        },
+        body: formData
+      });
+
+      if (response.ok) {
+        alert('Aluno adicionado com sucesso!');
+        document.getElementById('add-student-form').reset();
+        fetchStudents();
+      } else {
+        const errorData = await response.json();
+        alert(`Erro ao adicionar aluno: ${errorData.message}`);
+      }
+    } catch (error) {
+      console.error('Erro ao adicionar aluno:', error);
+      alert('Erro ao adicionar aluno.');
+    } finally {
+      submitButton.disabled = false; // Reativa o botão de submissão
+    }
+  });
+
+  async function fetchStudents() {
+    try {
+      const response = await fetch('http://localhost:3000/students', {
+        method: 'GET'
+      });
+
+      if (response.ok) {
+        const students = await response.json();
+        const studentsContainer = document.getElementById('students-container');
+        studentsContainer.innerHTML = '';
+
+        students.forEach(student => {
+          const studentCard = document.createElement('div');
+          studentCard.classList.add('cardPerfil');
+
+          const studentImg = document.createElement('img');
+          studentImg.classList.add('iconeDoAluno');
+          studentImg.src = `http://localhost:3000/${student.photo}`;
+          studentImg.alt = `Foto de ${student.name}`;
+
+          const studentName = document.createElement('h4');
+          studentName.classList.add('nomeDosAlunos');
+          studentName.textContent = student.name;
+
+          studentCard.appendChild(studentImg);
+          studentCard.appendChild(studentName);
+          studentsContainer.appendChild(studentCard);
+
+          studentCard.addEventListener('click', () => showStudentDetails(student));
+        });
+      } else {
+        console.error('Erro ao buscar alunos:', response.statusText);
+      }
+    } catch (error) {
+      console.error('Erro durante a requisição de alunos:', error);
+    }
+  }
+
+  function showStudentDetails(student) {
+    const modal = document.getElementById('studentModal');
+    const modalPhoto = document.getElementById('modal-student-photo');
+    const modalName = document.getElementById('modal-student-name');
+    const modalDescription = document.getElementById('modal-student-description');
+
+    modalPhoto.src = `http://localhost:3000/${student.photo}`;
+    modalName.textContent = student.name;
+    modalDescription.textContent = student.description || 'Descrição não disponível.';
+
+    modal.style.display = 'block';
+  }
+
+  const modal = document.getElementById('studentModal');
+  const span = document.getElementsByClassName('close')[0];
+
+  span.onclick = function() {
+    modal.style.display = 'none';
+  }
+
+  window.onclick = function(event) {
+    if (event.target == modal) {
+      modal.style.display = 'none';
+    }
+  }
+
+  fetchStudents();
+});
+
+
+
+
+//CODIGO EDITAR E EXCLUIR
+document.addEventListener('DOMContentLoaded', async function() {
+  let userRole;
+
+  async function fetchUserInfo() {
+    const token = localStorage.getItem('token');
+    if (!token) return;
+
+    try {
+      const response = await fetch('http://localhost:3000/userinfo', {
+        method: 'GET',
+        headers: {
+          'Authorization': `Bearer ${token}`
+        }
+      });
+
+      if (response.ok) {
+        const userData = await response.json();
+        userRole = userData.role;
+        const userInfoElement = document.getElementById('user-info');
+        const logoutElement = document.getElementById('logout');
+        const logarLinkElement = document.getElementById('logar-link');
+        const adminSectionElements = document.querySelectorAll('#admin-section');
+
+        userInfoElement.textContent = `Olá, ${userData.username} (${userData.role})`;
+        userInfoElement.style.display = 'inline';
+        logoutElement.style.display = 'inline';
+        logarLinkElement.style.display = 'none';
+
+        if (userData.role === 'admin') {
+          adminSectionElements.forEach(section => {
+            section.style.display = 'block';
+          });
+        }
+      } else {
+        console.error('Erro ao obter informações do usuário:', response.statusText);
+      }
+    } catch (error) {
+      console.error('Erro durante a requisição de informações do usuário:', error);
+    }
+  }
+
+  document.getElementById('logout').addEventListener('click', function(event) {
+    event.preventDefault();
+    localStorage.removeItem('token');
+    window.location.href = 'login.html';
+  });
+
+  fetchUserInfo();
+
+  document.getElementById('add-student-form').addEventListener('submit', async function(event) {
+    event.preventDefault();
+
+    const token = localStorage.getItem('token');
+    if (!token) return;
+
+    const formData = new FormData(this);
+
+    try {
+      const response = await fetch('http://localhost:3000/add-student', {
+        method: 'POST',
+        headers: {
+          'Authorization': `Bearer ${token}`
+        },
+        body: formData
+      });
+
+      if (response.ok) {
+        alert('Aluno adicionado com sucesso!');
+        document.getElementById('add-student-form').reset();
+        fetchStudents();
+      } else {
+        const errorData = await response.json();
+        alert(`Erro ao adicionar aluno: ${errorData.message}`);
+      }
+    } catch (error) {
+      console.error('Erro ao adicionar aluno:', error);
+      alert('Erro ao adicionar aluno.');
+    }
+  });
+
+  async function fetchStudents() {
+    try {
+      const response = await fetch('http://localhost:3000/students', {
+        method: 'GET'
+      });
+
+      if (response.ok) {
+        const students = await response.json();
+        const studentsContainer = document.getElementById('students-container');
+        studentsContainer.innerHTML = '';
+
+        students.forEach(student => {
+          const studentCard = document.createElement('div');
+          studentCard.classList.add('cardPerfil');
+
+          const studentImg = document.createElement('img');
+          studentImg.classList.add('iconeDoAluno');
+          studentImg.src = `http://localhost:3000/${student.photo}`;
+          studentImg.alt = `Foto de ${student.name}`;
+
+          const studentName = document.createElement('h4');
+          studentName.classList.add('nomeDosAlunos');
+          studentName.textContent = student.name;
+
+          studentCard.appendChild(studentImg);
+          studentCard.appendChild(studentName);
+
+          if (userRole === 'admin') {
+            const editButton = document.createElement('button');
+            editButton.textContent = 'Editar';
+            editButton.onclick = () => editStudent(student.id, student.name, student.photo);
+
+            const deleteButton = document.createElement('button');
+            deleteButton.textContent = 'Excluir';
+            deleteButton.onclick = () => deleteStudent(student.id);
+
+            studentCard.appendChild(editButton);
+            studentCard.appendChild(deleteButton);
+          }
+
+          studentsContainer.appendChild(studentCard);
+        });
+      } else {
+        console.error('Erro ao buscar alunos:', response.statusText);
+      }
+    } catch (error) {
+      console.error('Erro durante a requisição de alunos:', error);
+    }
+  }
+
+  async function deleteStudent(studentId) {
+    const token = localStorage.getItem('token');
+    if (!token) return;
+
+    try {
+      console.log(`Tentando excluir aluno com ID: ${studentId}`);
+      const response = await fetch(`http://localhost:3000/delete-student?id=${studentId}`, {
+        method: 'DELETE',
+        headers: {
+          'Authorization': `Bearer ${token}`
+        }
+      });
+
+      if (response.ok) {
+        alert('Aluno excluído com sucesso!');
+        fetchStudents();
+      } else {
+        const errorData = await response.json();
+        alert(`Erro ao excluir aluno: ${errorData.message}`);
+      }
+    } catch (error) {
+      console.error('Erro ao excluir aluno:', error);
+      alert('Erro ao excluir aluno.');
+    }
+  }
+
+  async function editStudent(studentId, studentName, photoPath) {
+    const newStudentName = prompt('Digite o novo nome do aluno:', studentName);
+    if (newStudentName === null) return; // Canceled
+
+    const token = localStorage.getItem('token');
+    if (!token) return;
+
+    try {
+      console.log(`Tentando editar aluno com ID: ${studentId}`);
+      const response = await fetch('http://localhost:3000/edit-student', {
+        method: 'PUT',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${token}`
+        },
+        body: JSON.stringify({ id: studentId, studentName: newStudentName, photoPath })
+      });
+
+      if (response.ok) {
+        alert('Aluno editado com sucesso!');
+        fetchStudents();
+      } else {
+        const errorData = await response.json();
+        alert(`Erro ao editar aluno: ${errorData.message}`);
+      }
+    } catch (error) {
+      console.error('Erro ao editar aluno:', error);
+      alert('Erro ao editar aluno.');
+    }
+  }
+
+  fetchStudents();
+});
+
+</script>
+<!--GALERIA DO ANUARIO-->
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const token = localStorage.getItem('token');
+  
+    if (token) {
+      fetch('http://localhost:3000/userinfo', {
+        headers: {
+          'Authorization': `Bearer ${token}`
+        }
+      })
+      .then(response => response.json())
+      .then(data => {
+        if (data.role === 'admin' || data.role === 'student') {
+          document.querySelector('.admin-actions').style.display = 'block';
+        }
+      })
+      .catch(error => {
+        console.error('Error fetching user info:', error);
+      });
+  
+      document.getElementById('uploadGalleryForm').addEventListener('submit', function(event) {
+        event.preventDefault();
+        const formData = new FormData(this);
+  
+        fetch('http://localhost:3000/add-gallery-photo', {
+          method: 'POST',
+          headers: {
+            'Authorization': `Bearer ${token}`
+          },
+          body: formData
+        })
+        .then(response => response.json())
+        .then(data => {
+          if (data.message === 'Foto da galeria adicionada com sucesso') {
+            const img = document.createElement('img');
+            img.src = `http://localhost:3000/${data.photoPath}`;
+            img.alt = 'Nova imagem da galeria';
+            img.classList.add('gallery-image');
+  
+            const thumbnail = document.createElement('div');
+            thumbnail.classList.add('column');
+            thumbnail.appendChild(img);
+  
+            document.getElementById('gallery-thumbnails').appendChild(thumbnail);
+            alert('Foto da galeria adicionada com sucesso!');
+            this.reset();
+            document.getElementById('uploadGalleryForm').style.display = 'none';
+          } else {
+            alert('Erro ao adicionar foto na galeria.');
+          }
+        })
+        .catch(error => {
+          console.error('Error uploading photo:', error);
+          alert('Erro ao adicionar foto na galeria.');
+        });
+      });
+    }
+  });
+  
+  function showAddImageForm() {
+    document.getElementById('uploadGalleryForm').style.display = 'block';
+  }
+  
+  function plusSlides(n) {
+    // Implementação da navegação da galeria
+  }
+  
+  function currentSlide(n) {
+    // Implementação da navegação da galeria
+  }
+  </script>
+
+
+<script>
+  const form = document.querySelector('form');
+  const loginMessage = document.getElementById('loginMessage');
+  
+  form.addEventListener('submit', async (event) => {
+    event.preventDefault();
+  
+    const formData = new FormData(form);
+    const username = formData.get('username');
+    const password = formData.get('password');
+  
+    try {
+      const response = await fetch('http://localhost:3000/login', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ username, password })
+      });
+  
+      if (!response.ok) {
+        throw new Error('Failed to login');
+      }
+  
+      const data = await response.json();
+      console.log(data); // Verifica se recebeu a resposta correta do servidor
+  
+      loginMessage.innerText = data.message;
+      loginMessage.style.display = 'block';
+  
+      form.reset();
+    } catch (error) {
+      console.error('Erro ao fazer login:', error.message);
+      alert('Erro ao fazer login. Verifique suas credenciais.');
+    }
+  });
+  </script>
+  
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const yearSpan = document.getElementById('currentYear');
+    const currentYear = new Date().getFullYear();
+    yearSpan.textContent = currentYear;
+  });
+
+  
+window.onscroll = function() {myFunction()};
+
+var navbar = document.getElementById("menudapagina");
+var sticky = navbar.offsetTop;
+
+function myFunction() {
+  if (window.pageYOffset >= sticky) {
+    navbar.classList.add("sticky")
+  } else {
+    navbar.classList.remove("sticky");
+  }
+}
+
+var slideIndex = 0;
+showSlides();
+
+function showSlides() {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("dot");
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";  
+  }
+  slideIndex++;
+  if (slideIndex > slides.length) {slideIndex = 1}    
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " active";
+  setTimeout(showSlides, 2000); // Change image every 2 seconds
+}
+</script>
+<script>
+// Get the modal
+var modal = document.getElementById("myModal");
+
+// Get the button that opens the modal
+var btn = document.getElementById("myBtn");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks the button, open the modal 
+btn.onclick = function() {
+  modal.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+  modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+</script>
+<script>
+var slideIndex = 1;
+showSlidess(slideIndex);
+
+function plusSlides(n) {
+  showSlidess(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlidess(slideIndex = n);
+}
+
+function showSlidess(n) {
+  var i;
+  var slides = document.getElementsByClassName("myGalerySlides");
+  var dots = document.getElementsByClassName("demo");
+  var captionText = document.getElementById("caption");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
+  captionText.innerHTML = dots[slideIndex-1].alt;
+}
+</script>
+</body>
+</html>
